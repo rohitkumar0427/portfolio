@@ -1,6 +1,4 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -31,7 +29,6 @@ const theme = createTheme({
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "maxContent",
-    // alignItems: "center",
   },
   image: {
     backgroundImage:
@@ -60,17 +57,18 @@ const useStyles = makeStyles((theme) => ({
   },
   contactme: {
     fontWeight: "900",
+    paddingBottom: "5rem",
   },
   text: {
     color: "#8B8E97",
     fontFamily: "Poppins, sans-serif",
+    padding: "1rem",
   },
   contactIcon: {
     textAlign: "center",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    padding: "3rem",
   },
   i: {
     fontSize: "3rem",
@@ -96,12 +94,10 @@ export default function SignInSide() {
               align="center"
               className={classes.contactme}
             >
-              Get in Touch
+              Contact Me
             </Typography>
             <Typography align="center" className={classes.text}>
-              I'm currently actively looking for any new opportunities, in
-              full-stack web development. If you are an employer looking for a
-              dedicated web developer, HIRE me before someone else does.
+              Let`s get in touch and build something together!
             </Typography>
             <Grid className={classes.contactIcon}>
               <a

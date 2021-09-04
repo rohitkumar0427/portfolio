@@ -13,7 +13,6 @@ import homeIcon from "./homeIcon.png";
 import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
 import { List, ListItem, ListItemText } from "@material-ui/core";
-import { withThemeCreator } from "@material-ui/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {

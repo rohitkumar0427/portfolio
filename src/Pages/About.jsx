@@ -7,12 +7,15 @@ import {
   Button,
 } from "@material-ui/core";
 import picnew from "./images/latest.png";
-import express from "./images/expressjs.png";
 import { Skills } from "./Skills";
+import { useState } from "react";
+import Experiance from "./Experiance";
+import Education from "./Education";
 
 const useStyles = makeStyles({
   root: {
     height: "maxContent",
+    minHeight: "57vw",
     width: "100%",
     padding: "3rem 3rem",
     backgroundColor: "#191919",
@@ -22,6 +25,7 @@ const useStyles = makeStyles({
   },
   paper: {
     height: "100%",
+    minHeight: "600px",
     backgroundImage: `url(${picnew})`,
     backgroundPosition: "top",
     filter: `grayscale(50%)`,
@@ -40,6 +44,7 @@ const useStyles = makeStyles({
   },
   button: {
     display: "flex",
+    margin: "1rem 0",
     justifyContent: "center",
     width: "100%",
   },
@@ -48,68 +53,22 @@ const useStyles = makeStyles({
     color: "#F9004D",
     fontSize: "1.5rem",
     // textAlign: "center",
-    "&:hover": {
-      backgroundColor: "#F9004D",
-      color: "#fff",
-    },
+    "&:hover": { backgroundColor: "#F9004D", color: "#fff" },
+  },
+  activeButton: {
+    backgroundColor: "#F9004D",
+    color: "#fff",
+  },
+  showSkill: {
+    height: "fitContent",
   },
 });
 
-const techStack = [
-  {
-    name: "React",
-    tech: "frontend",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png",
-  },
-  {
-    name: "HTML",
-    tech: "frontend",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
-  },
-  {
-    name: "CSS",
-    tech: "frontend",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/800px-CSS3_logo_and_wordmark.svg.png",
-  },
-  {
-    name: "Redux",
-    tech: "frontend",
-    image: "https://redux.js.org/img/redux.svg",
-  },
-  {
-    name: "Material UI",
-    tech: "frontend",
-    image: "https://material-ui.com/static/logo_raw.svg",
-  },
-  {
-    name: "Node.js",
-    tech: "backend",
-    image: "https://nodejs.org/static/images/logo.svg",
-  },
-  {
-    name: "Express.js",
-    tech: "backend",
-    image: `${express}`,
-  },
-  {
-    name: "MongoDB",
-    tech: "backend",
-    image:
-      "https://webimages.mongodb.com/_com_assets/cms/mongodb_atlas-h0ai1yctwo.svg?auto=format%2Ccompress&ch=DPR",
-  },
-  {
-    name: "JavaScript",
-    tech: "language",
-    image:
-      "https://www.javascript.com/etc/clientlibs/pluralsight/main/images/js-logo.png",
-  },
-];
-
 export default function About({ isMobile }) {
   const classes = useStyles();
+  const [active, setActive] = useState("skill");
+
+  const handleActive = (activeTab) => setActive(activeTab);
 
   return (
     <Grid
@@ -135,12 +94,37 @@ export default function About({ isMobile }) {
           society, an organization and myself.
         </Typography>
         <ButtonGroup className={classes.button}>
-          <Button className={classes.buttonItem}>Skills</Button>
-          {/* <Button className={classes.buttonItem}>Experiance</Button>
-          <Button className={classes.buttonItem}>Education</Button> */}
+          <Button
+            className={`${classes.buttonItem} ${
+              active === "skill" && classes.activeButton
+            }`}
+            onClick={() => handleActive("skill")}
+          >
+            Skills
+          </Button>
+          <Button
+            className={`${classes.buttonItem} ${
+              active === "experiance" && classes.activeButton
+            }`}
+            onClick={() => handleActive("experiance")}
+          >
+            Experiance
+          </Button>
+          <Button
+            className={`${classes.buttonItem} ${
+              active === "education" && classes.activeButton
+            }`}
+            onClick={() => handleActive("education")}
+          >
+            Education
+          </Button>
         </ButtonGroup>
-        <Grid container>
-          <Skills />
+        <Grid container className={classes.showSkill}>
+          {active === "skill" ? (
+            <Skills />
+          ) : (
+            <>{active === "experiance" ? <Experiance /> : <Education />}</>
+          )}
         </Grid>
       </Grid>
     </Grid>
