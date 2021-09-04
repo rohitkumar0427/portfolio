@@ -5,8 +5,10 @@ import {
   Typography,
   Button,
   ButtonGroup,
+  Modal,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
+import { useState } from "react";
 import express from "../Pages/images/expressjs.png";
 import mongoDB from "../Pages/images/mongoDB.png";
 import js from "../Pages/images/js.png";
@@ -50,9 +52,26 @@ const useStyles = makeStyles({
     flexGrow: "1",
     backgroundColor: "#F9004D",
     "&:hover": {
-      //   backgroundColor: "#F9004D",
       color: "#fff",
     },
+  },
+  paper: {
+    position: "absolute",
+    width: 800,
+    height: "60%",
+    textAlign: "center",
+    // backgroundColor: theme.palette.background.paper,
+    border: "2px solid #000",
+    // boxShadow: theme.shadows[5],
+    padding: "0",
+  },
+  modalContainer: {
+    position: "relative",
+  },
+  modalButton: {
+    // position: "absolute",
+    top: 1,
+    zIndex: 1,
   },
 });
 
@@ -107,6 +126,17 @@ const techStack = [
   },
 ];
 
+function getModalStyle() {
+  const top = 50;
+  const left = 50;
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`,
+  };
+}
+
 function TechIcon({ item }) {
   const classes = useStyles();
   const { name, image } = item;
@@ -128,14 +158,42 @@ function TechIcon({ item }) {
 
 export function ProjectCard({ item }) {
   const classes = useStyles();
+  const [modalStyle] = useState(getModalStyle);
+  const [open, setOpen] = useState(false);
 
-  const { title, description1, tech, site, image, github } = item;
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const { title, description1, tech, site, image, github, video } = item;
 
   return (
     <Grid item md={4} sm={6} xs={12}>
       <Paper className={classes.root}>
-        <Box>
+        <Box classeName={classes.modalContainer}>
           <img src={image} alt="logo" srcset="" width="100%" height="200px" />
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+          >
+            <Paper style={modalStyle} className={classes.paper}>
+              <iframe
+                width="100%"
+                height="100%"
+                src={`${video}`}
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </Paper>
+          </Modal>
         </Box>
         <Box className={classes.des}>
           <Typography variant="h5" className={classes.name}>
@@ -160,13 +218,16 @@ export function ProjectCard({ item }) {
             className={classes.buttonItem}
             onClick={() => window.open(`${site}`)}
           >
+            Visit
+          </Button>
+          <Button onClick={handleOpen} className={classes.buttonItem}>
             Demo
           </Button>
           <Button
             className={classes.buttonItem}
             onClick={() => window.open(`${github}`)}
           >
-            Github
+            Code
           </Button>
         </ButtonGroup>
       </Paper>

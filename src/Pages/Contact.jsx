@@ -30,7 +30,7 @@ const theme = createTheme({
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: "100vh",
+    height: "maxContent",
     // alignItems: "center",
   },
   image: {
@@ -65,6 +65,22 @@ const useStyles = makeStyles((theme) => ({
     color: "#8B8E97",
     fontFamily: "Poppins, sans-serif",
   },
+  contactIcon: {
+    textAlign: "center",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "3rem",
+  },
+  i: {
+    fontSize: "3rem",
+    margin: "1rem 1rem",
+    color: "#fff",
+    transition: "transform 0.5s",
+    "&:hover": {
+      transform: "scale(1.5)",
+    },
+  },
 }));
 
 export default function SignInSide() {
@@ -74,7 +90,7 @@ export default function SignInSide() {
     <ThemeProvider theme={theme}>
       <Grid container component="main" className={classes.root} id="contact">
         <Grid item xs={12} sm={8} md={6} component={Paper} elevation={6} square>
-          <div className={classes.paper}>
+          <Paper className={classes.paper}>
             <Typography
               variant="h3"
               align="center"
@@ -87,74 +103,53 @@ export default function SignInSide() {
               full-stack web development. If you are an employer looking for a
               dedicated web developer, HIRE me before someone else does.
             </Typography>
-          </div>
+            <Grid className={classes.contactIcon}>
+              <a
+                href="tel:9686569737"
+                aria-label="GitHub"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <i className={`fas fa-phone-alt ${classes.i}`} />
+              </a>
+              <a
+                href="mailto: rohitkumar0427@gmail.com"
+                aria-label="email"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className={`far fa-envelope ${classes.i}`}></i>
+              </a>
+              <a
+                href="https://twitter.com/imrkg2"
+                aria-label="Twitter"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className={`fab fa-twitter ${classes.i}`}></i>
+              </a>
+              <a
+                href="https://github.com/rohitkumar0427"
+                aria-label="GitHub"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <i className={`fab fa-github ${classes.i}`} />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/rkg1995/"
+                aria-label="Linkedin"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className={`fab fa-linkedin-in ${classes.i}`} />
+              </a>
+            </Grid>
+          </Paper>
         </Grid>
         <Grid item xs={false} sm={4} md={6} className={classes.image} />
       </Grid>
     </ThemeProvider>
   );
-}
-
-
-{
-  /* <form
-              className={classes.form}
-              noValidate
-              // onSubmit={(e) => e.preventDefault()}
-            >
-              <TextField
-                variant="outlined"
-                className={classes.textfield}
-                margin="normal"
-                required
-                fullWidth
-                id="name"
-                label="Your Name"
-                name="email"
-                autoComplete="email"
-                autoFocus
-              />
-              <TextField
-                variant="outlined"
-                className={classes.textfield}
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="Your email"
-                name="email"
-                autoComplete="email"
-                autoFocus
-              />
-              <TextField
-                variant="outlined"
-                className={classes.textfield}
-                margin="normal"
-                fullWidth
-                name="subject"
-                label="Write a subject"
-                id="subject"
-              />
-              <TextField
-                variant="outlined"
-                className={classes.textfield}
-                margin="normal"
-                multiline={true}
-                fullWidth
-                name="message"
-                label="Your Message"
-                id="message"
-                minRows={5}
-              />
-
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="secondary"
-                className={classes.submit}
-              >
-                Submit
-              </Button>
-            </form> */
 }

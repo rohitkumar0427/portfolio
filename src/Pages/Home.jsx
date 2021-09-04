@@ -1,5 +1,5 @@
 import { Button, Grid, makeStyles, Typography } from "@material-ui/core";
-import picnew from "./images/picnew.png";import DownloadLink from "react-download-link";
+import picnew from "./images/picnew.png";
 
 const useStyles = makeStyles({
   root: {
