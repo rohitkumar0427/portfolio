@@ -8,6 +8,10 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 
+import express from "../Pages/expressjs.png";
+import mongoDB from "../Pages/mongoDB.png";
+import js from "../Pages/js.png";
+
 const useStyles = makeStyles({
   root: {
     height: "90%",
@@ -41,6 +45,7 @@ const useStyles = makeStyles({
     display: "flex",
     justifyContent: "center",
     width: "100%",
+    marginTop: "2rem",
   },
   buttonItem: {
     flexGrow: "1",
@@ -50,18 +55,80 @@ const useStyles = makeStyles({
   },
 });
 
+const techStack = [
+  {
+    name: "React",
+    tech: "frontend",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png",
+  },
+  {
+    name: "HTML",
+    tech: "frontend",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
+  },
+  {
+    name: "CSS",
+    tech: "frontend",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/800px-CSS3_logo_and_wordmark.svg.png",
+  },
+  {
+    name: "Redux",
+    tech: "frontend",
+    image: "https://redux.js.org/img/redux.svg",
+  },
+  {
+    name: "Material UI",
+    tech: "frontend",
+    image: "https://material-ui.com/static/logo_raw.svg",
+  },
+  {
+    name: "Node.js",
+    tech: "backend",
+    image: "https://nodejs.org/static/images/logo.svg",
+  },
+  {
+    name: "Express.js",
+    tech: "backend",
+    image: `${express}`,
+  },
+  {
+    name: "MongoDB",
+    tech: "backend",
+    image: `${mongoDB}`,
+  },
+  {
+    name: "JavaScript",
+    tech: "language",
+    image: `${js}`,
+  },
+];
+
+function TechIcon({ item }) {
+  const classes = useStyles();
+  const { name, image } = item;
+  return (
+    <Grid item md={2.5} justifyContent="center">
+      <img
+        src={`${image}`}
+        alt={`${name} icon`}
+        className={classes.picIcons}
+        height="50px"
+        align="center"
+      />
+      <Typography align="center" style={{width: "maxContent"}}>
+        {name}
+      </Typography>
+    </Grid>
+  );
+}
+
 export function ProjectCard({ item }) {
   const classes = useStyles();
 
-  const {
-    title,
-    description1,
-    description2,
-    description3,
-    site,
-    image,
-    github,
-  } = item;
+  const { title, description1, tech, site, image, github } = item;
 
   return (
     <Grid item md={4} sm={6} xs={12}>
@@ -76,9 +143,17 @@ export function ProjectCard({ item }) {
           <Typography className={classes.des} align="justify">
             {description1}
           </Typography>
-          {/* <Typography>{description2}</Typography>
-          <Typography className={classes.des}>{description3}</Typography> */}
         </Box>
+        <Typography variant="h5" className={classes.name}>
+          Tech Stack
+        </Typography>
+        <Grid container spacing={6} justifyContent="center">
+          {techStack
+            .filter((item) => tech.includes(item.name))
+            .map((item) => (
+              <TechIcon item={item} />
+            ))}
+        </Grid>
         <ButtonGroup className={classes.button}>
           <Button
             className={classes.buttonItem}

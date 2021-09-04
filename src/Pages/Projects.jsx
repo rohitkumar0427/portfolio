@@ -30,6 +30,7 @@ export default function Projects({ isMobile }) {
       description3: "Done in collaboration with 2 members, In under 3 weeks.",
       site: "https://rohitkumar0427.github.io/pluralWebsite/",
       github: "https://github.com/rohitkumar0427/pluralWebsite",
+      tech: ["HTML", "CSS", "JavaScript"],
       image:
         "https://www.pngmagic.com/product_images/pluralsight-logo-png-vector-file-free-download.png",
     },
@@ -40,6 +41,7 @@ export default function Projects({ isMobile }) {
       description3: "Done in collaboration with 3 members, In under 1 weeks.",
       site: "https://monsterindia.netlify.app/",
       github: "https://github.com/pallav1998/Monster_Project",
+      tech: ["React", "Material UI", "JavaScript"],
       image:
         "https://media.monsterindia.com/trex/public/default/images/monster-logo.svg",
     },
@@ -49,6 +51,7 @@ export default function Projects({ isMobile }) {
         " Hotels.com is a website for booking hotel rooms online and by telephone. In this app, user can search for hotels based on city, categorizing them with rating.",
       description3: "Done in collaboration with 3 members, In under 1 weeks.",
       site: "https://hotelsclone.netlify.app/",
+      tech: ["React", "Redux", "Material UI"],
       github: "https://github.com/abhishekmah/Project-Hotels.com",
       image: `${hotels}`,
     },
