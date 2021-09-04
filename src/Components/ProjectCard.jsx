@@ -57,7 +57,7 @@ const useStyles = makeStyles({
   },
   paper: {
     position: "absolute",
-    width: 800,
+    width: "60%",
     height: "60%",
     textAlign: "center",
     // backgroundColor: theme.palette.background.paper,
