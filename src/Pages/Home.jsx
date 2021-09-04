@@ -1,16 +1,15 @@
 import { Button, Grid, makeStyles, Typography } from "@material-ui/core";
-import picnew from "./picnew.png";
+import picnew from "./images/picnew.png";import DownloadLink from "react-download-link";
 
 const useStyles = makeStyles({
   root: {
     display: "flex",
     height: "100vh",
-    // width: "100%",
     margin: "auto",
     padding: "0 3rem",
     alignItems: "center",
     backgroundImage: `url(${picnew})`,
-    backgroundPosition: "right bottom",
+    backgroundPosition: "75% 50%",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundColor: "#090909",
@@ -38,14 +37,21 @@ const useStyles = makeStyles({
   button: {
     backgroundColor: "#F9004D",
     padding: "0.5rem 1rem",
+    color: "#fff",
+    fontWeight: "900",
   },
 });
 
-export default function Home({isMobile}) {
+export default function Home({ isMobile }) {
   const classes = useStyles();
 
   return (
-    <div id="home" className={!isMobile ? classes.root : `${classes.paddingMobile} ${classes.root}`}>
+    <div
+      id="home"
+      className={
+        !isMobile ? classes.root : `${classes.paddingMobile} ${classes.root}`
+      }
+    >
       <Grid md={9} sm={12} lg={7} xs={12}>
         {!isMobile ? (
           <>
@@ -56,7 +62,7 @@ export default function Home({isMobile}) {
               Hello, I`m{" "}
               <span className={`${classes.span} ${classes.text}`}>Rohit</span>
               <br />
-              Welcome to my World.
+              Welcome to my World!
             </Typography>
           </>
         ) : (
@@ -74,7 +80,16 @@ export default function Home({isMobile}) {
             </Typography>
           </>
         )}
-        <Button className={classes.button}>Download CV</Button>
+        <Button
+          className={classes.button}
+          onClick={() =>
+            window.open(
+              "https://drive.google.com/file/d/1UpS1Vlodw-iIleYyE-Iubb0uolwj98SP/view?usp=sharing"
+            )
+          }
+        >
+          Download CV
+        </Button>
       </Grid>
     </div>
   );

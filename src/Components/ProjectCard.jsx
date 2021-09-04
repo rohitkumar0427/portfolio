@@ -7,9 +7,9 @@ import {
   ButtonGroup,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
-import express from "../Pages/expressjs.png";
-import mongoDB from "../Pages/mongoDB.png";
-import js from "../Pages/js.png";
+import express from "../Pages/images/expressjs.png";
+import mongoDB from "../Pages/images/mongoDB.png";
+import js from "../Pages/images/js.png";
 
 const useStyles = makeStyles({
   root: {

@@ -1,8 +1,8 @@
 import { Grid, Typography, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
-import express from "./expressjs.png";
-import mongoDB from "./mongoDB.png";
-import js from "./js.png";
+import express from "./images/expressjs.png";
+import mongoDB from "./images/mongoDB.png";
+import js from "./images/js.png";
 
 const techStack = [
   {

@@ -6,8 +6,8 @@ import {
   Typography,
   Button,
 } from "@material-ui/core";
-import picnew from "./latest.png";
-import express from "./expressjs.png";
+import picnew from "./images/latest.png";
+import express from "./images/expressjs.png";
 import { Skills } from "./Skills";
 
 const useStyles = makeStyles({

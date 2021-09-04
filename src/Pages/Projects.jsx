@@ -1,6 +1,6 @@
 import { Grid, makeStyles, Typography } from "@material-ui/core";
 import { ProjectCard } from "../Components/ProjectCard";
-import hotels from "./hotels.png";
+import hotels from "./images/hotels.png";
 
 const useStyles = makeStyles({
   root: {
