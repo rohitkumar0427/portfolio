@@ -1,6 +1,7 @@
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
 import ScrollToTop from "./Components/ScrollToTop";
+import Footer from "./Components/Footer";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
@@ -8,7 +9,7 @@ import Projects from "./Pages/Projects";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-function App() {  
+function App() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -17,10 +18,11 @@ function App() {
     <div className="App">
       <Navbar />
       <ScrollToTop />
-      <Home isMobile={isMobile}/>
-      <About isMobile={isMobile}/>
-      <Projects isMobile={isMobile}/>
-      <Contact isMobile={isMobile}/>
+      <Home isMobile={isMobile} />
+      <About isMobile={isMobile} />
+      <Projects isMobile={isMobile} />
+      <Contact isMobile={isMobile} />
+      <Footer />
     </div>
     // </ThemeProvider>
   );

@@ -45,8 +45,12 @@ const useStyles = makeStyles({
   },
   buttonItem: {
     flexGrow: "1",
+    color: "#F9004D",
+    fontSize: "1.5rem",
+    // textAlign: "center",
     "&:hover": {
       backgroundColor: "#F9004D",
+      color: "#fff",
     },
   },
 });
@@ -132,8 +136,8 @@ export default function About({ isMobile }) {
         </Typography>
         <ButtonGroup className={classes.button}>
           <Button className={classes.buttonItem}>Skills</Button>
-          <Button className={classes.buttonItem}>Experiance</Button>
-          <Button className={classes.buttonItem}>Education</Button>
+          {/* <Button className={classes.buttonItem}>Experiance</Button>
+          <Button className={classes.buttonItem}>Education</Button> */}
         </ButtonGroup>
         <Grid container>
           <Skills />

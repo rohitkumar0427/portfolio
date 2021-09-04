@@ -30,7 +30,8 @@ const theme = createTheme({
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: "fitContent",
+    height: "100vh",
+    // alignItems: "center",
   },
   image: {
     backgroundImage:
@@ -44,10 +45,11 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: "center",
   },
   paper: {
-    padding: theme.spacing(8, 4),
+    padding: theme.spacing(20, 4),
     display: "flex",
     flexDirection: "column",
     alignItems: "left",
+    justifyContent: "center",
   },
   form: {
     width: "100%", // Fix IE 11 issue.
@@ -58,6 +60,10 @@ const useStyles = makeStyles((theme) => ({
   },
   contactme: {
     fontWeight: "900",
+  },
+  text: {
+    color: "#8B8E97",
+    fontFamily: "Poppins, sans-serif",
   },
 }));
 
@@ -70,13 +76,28 @@ export default function SignInSide() {
         <Grid item xs={12} sm={8} md={6} component={Paper} elevation={6} square>
           <div className={classes.paper}>
             <Typography
-              component="h1"
-              variant="h2"
+              variant="h3"
+              align="center"
               className={classes.contactme}
             >
-              Contact Me.
+              Get in Touch
             </Typography>
-            <form
+            <Typography align="center" className={classes.text}>
+              I'm currently actively looking for any new opportunities, in
+              full-stack web development. If you are an employer looking for a
+              dedicated web developer, HIRE me before someone else does.
+            </Typography>
+          </div>
+        </Grid>
+        <Grid item xs={false} sm={4} md={6} className={classes.image} />
+      </Grid>
+    </ThemeProvider>
+  );
+}
+
+
+{
+  /* <form
               className={classes.form}
               noValidate
               // onSubmit={(e) => e.preventDefault()}
@@ -135,11 +156,5 @@ export default function SignInSide() {
               >
                 Submit
               </Button>
-            </form>
-          </div>
-        </Grid>
-        <Grid item xs={false} sm={4} md={6} className={classes.image} />
-      </Grid>
-    </ThemeProvider>
-  );
+            </form> */
 }
