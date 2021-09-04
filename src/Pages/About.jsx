@@ -15,7 +15,7 @@ import Education from "./Education";
 const useStyles = makeStyles({
   root: {
     height: "maxContent",
-    minHeight: "57vw",
+    // minHeight: "57vw",
     width: "100%",
     padding: "3rem 3rem",
     backgroundColor: "#191919",
