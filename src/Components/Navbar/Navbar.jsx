@@ -5,13 +5,15 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import Menu from "@material-ui/core/Menu";
 import Box from "@material-ui/core/Box";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 import { Link, animateScroll as scroll } from "react-scroll";
 import homeIcon from "./homeIcon.png";
+import Divider from "@material-ui/core/Divider";
+import Drawer from "@material-ui/core/Drawer";
+import { List, ListItem, ListItemText } from "@material-ui/core";
+import { withThemeCreator } from "@material-ui/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,26 +43,23 @@ const useStyles = makeStyles((theme) => ({
   },
   appBarOpac: {
     color: "transparent",
-    // opacity: "0.1"
   },
   icon: {
     margin: "10px 1rem 0",
   },
+  divider:{
+    backgroundColor: "#fff",
+  }
 }));
 
 export default function Navbar() {
   const classes = useStyles();
   const theme = useTheme();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
+  const [anchor, setAnchor] = React.useState(false);
   const [top, setTop] = useState(false);
 
-  const handleMenu = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
   const handleClose = () => {
-    setAnchorEl(null);
+    setAnchor(false);
   };
 
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
@@ -126,42 +125,40 @@ export default function Navbar() {
                 className={classes.menuButton}
                 color="inherit"
                 aria-label="menu"
-                onClick={handleMenu}
+                onClick={() => setAnchor(true)}
               >
                 <MenuIcon />
               </IconButton>
-              <Menu
-                id="menu-appbar"
-                className={classes.menuItems}
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                open={open}
-                onClose={handleClose}
+              <Drawer
+                open={anchor}
+                anchor="right"
+                onClose={() => setAnchor(false)}
               >
-                {menuItems.map(({ title, id, pageURL }) => (
-                  <Link
-                    activeClass="active"
-                    to={id}
-                    spy={true}
-                    smooth={true}
-                    scroll="easeInOutQuint"
-                    offset={-70}
-                    duration={500}
-                  >
-                    <MenuItem onClick={() => handleClose(pageURL)}>
-                      {title}
-                    </MenuItem>
-                  </Link>
-                ))}
-              </Menu>
+                <List style={{ width: "12rem" }}>
+                  {menuItems.map(({ title, id, pageURL }) => (
+                    <>
+                      <Link
+                        activeClass="active"
+                        to={id}
+                        spy={true}
+                        smooth={true}
+                        scroll="easeInOutQuint"
+                        offset={-70}
+                        duration={500}
+                      >
+                        <ListItem
+                          button
+                          key={title}
+                          onClick={() => handleClose(pageURL)}
+                        >
+                          <ListItemText primary={title} />
+                        </ListItem>
+                        <Divider className={classes.divider}/>
+                      </Link>
+                    </>
+                  ))}
+                </List>
+              </Drawer>
             </div>
           ) : (
             <Box className={classes.menu}>
