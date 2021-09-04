@@ -45,7 +45,6 @@ const useStyles = makeStyles({
     justifyContent: "center",
     width: "100%",
     marginTop: "2rem",
-    
   },
   buttonItem: {
     flexGrow: "1",
