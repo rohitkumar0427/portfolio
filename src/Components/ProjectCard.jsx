@@ -65,6 +65,9 @@ const useStyles = makeStyles({
     // boxShadow: theme.shadows[5],
     padding: "0",
   },
+  paperMobile:{
+    width: "95%",
+  },
   modalContainer: {
     position: "relative",
   },
@@ -156,7 +159,7 @@ function TechIcon({ item }) {
   );
 }
 
-export function ProjectCard({ item }) {
+export function ProjectCard({ item, isMobile }) {
   const classes = useStyles();
   const [modalStyle] = useState(getModalStyle);
   const [open, setOpen] = useState(false);
@@ -182,7 +185,7 @@ export function ProjectCard({ item }) {
             aria-labelledby="simple-modal-title"
             aria-describedby="simple-modal-description"
           >
-            <Paper style={modalStyle} className={classes.paper}>
+            <Paper style={modalStyle} className={`${classes.paper} ${isMobile && classes.paperMobile}`}>
               <iframe
                 width="100%"
                 height="100%"

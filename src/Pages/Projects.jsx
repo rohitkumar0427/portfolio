@@ -72,7 +72,7 @@ export default function Projects({ isMobile }) {
       </Typography>
       <Grid container spacing="6">
         {projectDetails.map((item) => {
-          return <ProjectCard item={item} />;
+          return <ProjectCard item={item} isMobile={isMobile}/>;
         })}
       </Grid>
     </div>
