@@ -51,7 +51,7 @@ const useStyles = makeStyles({
   buttonItem: {
     flexGrow: "1",
     color: "#F9004D",
-    fontSize: "1.5rem",
+    fontSize: "1.25rem",
     // textAlign: "center",
     "&:hover": { backgroundColor: "#F9004D", color: "#fff" },
   },
