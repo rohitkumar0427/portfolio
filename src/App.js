@@ -5,20 +5,22 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
 import Projects from "./Pages/Projects";
-import { ThemeProvider } from "@material-ui/core/styles";
+import { useTheme } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-const theme = {};
+function App() {  
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-function App() {
   return (
     // <ThemeProvider theme={theme}>
     <div className="App">
       <Navbar />
       <ScrollToTop />
-      <Home />
-      <About />
-      <Projects />
-      <Contact />
+      <Home isMobile={isMobile}/>
+      <About isMobile={isMobile}/>
+      <Projects isMobile={isMobile}/>
+      <Contact isMobile={isMobile}/>
     </div>
     // </ThemeProvider>
   );

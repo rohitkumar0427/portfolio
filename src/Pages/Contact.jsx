@@ -26,12 +26,11 @@ const theme = createTheme({
       hover: "rgba(249,0,77, 0.08)",
     },
   },
-
 });
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: "100vh",
+    height: "fitContent",
   },
   image: {
     backgroundImage:
@@ -68,7 +67,7 @@ export default function SignInSide() {
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" className={classes.root} id="contact">
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+        <Grid item xs={12} sm={8} md={6} component={Paper} elevation={6} square>
           <div className={classes.paper}>
             <Typography
               component="h1"
@@ -77,7 +76,11 @@ export default function SignInSide() {
             >
               Contact Me.
             </Typography>
-            <form className={classes.form} noValidate>
+            <form
+              className={classes.form}
+              noValidate
+              // onSubmit={(e) => e.preventDefault()}
+            >
               <TextField
                 variant="outlined"
                 className={classes.textfield}
@@ -135,7 +138,7 @@ export default function SignInSide() {
             </form>
           </div>
         </Grid>
-        <Grid item xs={false} sm={4} md={7} className={classes.image} />
+        <Grid item xs={false} sm={4} md={6} className={classes.image} />
       </Grid>
     </ThemeProvider>
   );

@@ -7,14 +7,11 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+import Box from "@material-ui/core/Box";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
-import { Avatar, Box, Button } from "@material-ui/core";
-import Scroll, { Link } from "react-scroll";
+import { Link, animateScroll as scroll } from "react-scroll";
 import homeIcon from "./homeIcon.png";
-import { Link as RouterLink } from "react-router-dom";
-
-var scroll = Scroll.animateScroll;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,12 +33,18 @@ const useStyles = makeStyles((theme) => ({
   button: {
     margin: "1rem",
   },
+  title: {
+    flexGrow: "1",
+  },
   appBar: {
     backgroundColor: "#191919",
   },
   appBarOpac: {
     color: "transparent",
     // opacity: "0.1"
+  },
+  icon: {
+    margin: "10px 1rem 0",
   },
 }));
 
@@ -83,11 +86,6 @@ export default function Navbar() {
       id: "contact",
       pageURL: "./contact",
     },
-    {
-      title: "Resume",
-      id: "resume",
-      pageURL: "./resume",
-    },
   ];
 
   window.addEventListener("scroll", (event) => {
@@ -95,6 +93,10 @@ export default function Navbar() {
     if (scroll > 0) setTop(true);
     else setTop(false);
   });
+
+  function scrollToTop() {
+    scroll.scrollToTop();
+  }
 
   return (
     <div className={classes.root}>
@@ -104,8 +106,18 @@ export default function Navbar() {
         className={top && classes.appBar}
       >
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            <img src={homeIcon} alt="homeIcon" height="100%" width="100%" />
+          <Typography
+            variant="h6"
+            className={classes.title}
+            onClick={() => scrollToTop()}
+          >
+            <img
+              src={homeIcon}
+              alt="homeIcon"
+              height="50px"
+              width="50px"
+              className={classes.icon}
+            />
           </Typography>
           {isMobile ? (
             <div>
@@ -134,10 +146,20 @@ export default function Navbar() {
                 open={open}
                 onClose={handleClose}
               >
-                {menuItems.map(({ title, pageURL }) => (
-                  <MenuItem onClick={() => handleClose(pageURL)}>
-                    {title}
-                  </MenuItem>
+                {menuItems.map(({ title, id, pageURL }) => (
+                  <Link
+                    activeClass="active"
+                    to={id}
+                    spy={true}
+                    smooth={true}
+                    scroll="easeInOutQuint"
+                    offset={-70}
+                    duration={500}
+                  >
+                    <MenuItem onClick={() => handleClose(pageURL)}>
+                      {title}
+                    </MenuItem>
+                  </Link>
                 ))}
               </Menu>
             </div>
