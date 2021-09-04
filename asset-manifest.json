@@ -1,23 +1,28 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.a617e044.chunk.css",
-    "main.js": "/portfolio/static/js/main.710aeca3.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.710aeca3.chunk.js.map",
-    "runtime-main.js": "/portfolio/static/js/runtime-main.ac6dc486.js",
-    "runtime-main.js.map": "/portfolio/static/js/runtime-main.ac6dc486.js.map",
-    "static/js/2.d7ad6bdd.chunk.js": "/portfolio/static/js/2.d7ad6bdd.chunk.js",
-    "static/js/2.d7ad6bdd.chunk.js.map": "/portfolio/static/js/2.d7ad6bdd.chunk.js.map",
-    "static/js/3.a5807fa8.chunk.js": "/portfolio/static/js/3.a5807fa8.chunk.js",
-    "static/js/3.a5807fa8.chunk.js.map": "/portfolio/static/js/3.a5807fa8.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.ab39597f.chunk.css",
+    "main.js": "/portfolio/static/js/main.47659394.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.47659394.chunk.js.map",
+    "runtime-main.js": "/portfolio/static/js/runtime-main.2b9adb21.js",
+    "runtime-main.js.map": "/portfolio/static/js/runtime-main.2b9adb21.js.map",
+    "static/js/2.b27520dc.chunk.js": "/portfolio/static/js/2.b27520dc.chunk.js",
+    "static/js/2.b27520dc.chunk.js.map": "/portfolio/static/js/2.b27520dc.chunk.js.map",
+    "static/js/3.11dcc0c3.chunk.js": "/portfolio/static/js/3.11dcc0c3.chunk.js",
+    "static/js/3.11dcc0c3.chunk.js.map": "/portfolio/static/js/3.11dcc0c3.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/portfolio/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.d7ad6bdd.chunk.js.LICENSE.txt": "/portfolio/static/js/2.d7ad6bdd.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/portfolio/static/media/logo.6ce24c58.svg"
+    "static/css/main.ab39597f.chunk.css.map": "/portfolio/static/css/main.ab39597f.chunk.css.map",
+    "static/js/2.b27520dc.chunk.js.LICENSE.txt": "/portfolio/static/js/2.b27520dc.chunk.js.LICENSE.txt",
+    "static/media/expressjs.39a0f4c3.png": "/portfolio/static/media/expressjs.39a0f4c3.png",
+    "static/media/hotels.06486c9b.png": "/portfolio/static/media/hotels.06486c9b.png",
+    "static/media/js.dfef8d73.png": "/portfolio/static/media/js.dfef8d73.png",
+    "static/media/latest.2cffc6f9.png": "/portfolio/static/media/latest.2cffc6f9.png",
+    "static/media/mongoDB.55742478.png": "/portfolio/static/media/mongoDB.55742478.png",
+    "static/media/picnew.26626126.png": "/portfolio/static/media/picnew.26626126.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.ac6dc486.js",
-    "static/js/2.d7ad6bdd.chunk.js",
-    "static/css/main.a617e044.chunk.css",
-    "static/js/main.710aeca3.chunk.js"
+    "static/js/runtime-main.2b9adb21.js",
+    "static/js/2.b27520dc.chunk.js",
+    "static/css/main.ab39597f.chunk.css",
+    "static/js/main.47659394.chunk.js"
   ]
 }
