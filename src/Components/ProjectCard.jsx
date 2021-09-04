@@ -45,11 +45,14 @@ const useStyles = makeStyles({
     justifyContent: "center",
     width: "100%",
     marginTop: "2rem",
+    
   },
   buttonItem: {
     flexGrow: "1",
+    backgroundColor: "#F9004D",
     "&:hover": {
-      backgroundColor: "#F9004D",
+      //   backgroundColor: "#F9004D",
+      color: "#fff",
     },
   },
 });
@@ -117,7 +120,7 @@ function TechIcon({ item }) {
         height="50px"
         align="center"
       />
-      <Typography align="center" style={{width: "maxContent"}}>
+      <Typography align="center" style={{ width: "maxContent" }}>
         {name}
       </Typography>
     </Grid>
