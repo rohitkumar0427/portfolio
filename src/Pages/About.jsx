@@ -14,7 +14,7 @@ import Education from "./Education";
 
 const useStyles = makeStyles({
   root: {
-    height: "maxContent",
+    height: "fitcontent",
     // minHeight: "57vw",
     width: "100%",
     padding: "3rem 3rem",
@@ -25,7 +25,7 @@ const useStyles = makeStyles({
   },
   paper: {
     height: "100%",
-    minHeight: "600px",
+    maxHeight: "800px",
     backgroundImage: `url(${picnew})`,
     backgroundPosition: "top",
     filter: `grayscale(50%)`,

@@ -36,7 +36,7 @@ const useStyles = makeStyles({
   },
   button: {
     backgroundColor: "#F9004D",
-    padding: "0.5rem 1rem",
+    padding: "0.5rem 2rem",
     color: "#fff",
     fontWeight: "900",
   },
@@ -88,7 +88,7 @@ export default function Home({ isMobile }) {
             )
           }
         >
-          Download CV
+          Find My CV Here
         </Button>
       </Grid>
     </div>

@@ -46,9 +46,9 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     margin: "10px 1rem 0",
   },
-  divider:{
-    backgroundColor: "#fff",
-  }
+  divider: {
+    backgroundColor: "#000",
+  },
 }));
 
 export default function Navbar() {

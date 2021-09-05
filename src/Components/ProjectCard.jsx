@@ -50,9 +50,12 @@ const useStyles = makeStyles({
   },
   buttonItem: {
     flexGrow: "1",
+    color: "#fff",
     backgroundColor: "#F9004D",
+    transition: "transform ease 1s",
     "&:hover": {
-      color: "#fff",
+      transform: "scale(1.5)",
+      border: 0,
     },
   },
   paper: {
@@ -65,7 +68,7 @@ const useStyles = makeStyles({
     // boxShadow: theme.shadows[5],
     padding: "0",
   },
-  paperMobile:{
+  paperMobile: {
     width: "95%",
   },
   modalContainer: {
@@ -185,7 +188,10 @@ export function ProjectCard({ item, isMobile }) {
             aria-labelledby="simple-modal-title"
             aria-describedby="simple-modal-description"
           >
-            <Paper style={modalStyle} className={`${classes.paper} ${isMobile && classes.paperMobile}`}>
+            <Paper
+              style={modalStyle}
+              className={`${classes.paper} ${isMobile && classes.paperMobile}`}
+            >
               <iframe
                 width="100%"
                 height="100%"
@@ -221,7 +227,7 @@ export function ProjectCard({ item, isMobile }) {
             className={classes.buttonItem}
             onClick={() => window.open(`${site}`)}
           >
-            Visit
+            <p classeName={classes.p}>Visit</p>
           </Button>
           <Button onClick={handleOpen} className={classes.buttonItem}>
             Demo
