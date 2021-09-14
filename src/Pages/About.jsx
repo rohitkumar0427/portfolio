@@ -88,10 +88,10 @@ export default function About({ isMobile }) {
         </Typography>
         <Typography variant="h6" align="justify" className={classes.text}>
           Hi, I'm a curious and enthusiastic full-stack web developer with a
-          good foundation in following libraries, frameworks and tools. I'd like
-          to work in a team and keep on learning new things throughout my life.
-          With this, I intend to work and solve problems for the betterment of
-          society, an organization and myself.
+          good foundation in following libraries, frameworks, and tools. I
+          desire to work in a team and keep on learning new things throughout my
+          life. With this, I intend to work and solve problems for the growth of
+          society, an organization, and myself.
         </Typography>
         <ButtonGroup className={classes.button}>
           <Button
@@ -108,7 +108,7 @@ export default function About({ isMobile }) {
             }`}
             onClick={() => handleActive("experiance")}
           >
-            Experiance
+            EXPERIENCE
           </Button>
           <Button
             className={`${classes.buttonItem} ${

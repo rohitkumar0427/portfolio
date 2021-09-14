@@ -2,14 +2,14 @@ import { Grid, Typography, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import express from "./images/expressjs.png";
 import mongoDB from "./images/mongoDB.png";
+import react from "./images/logo512.png";
 import js from "./images/js.png";
 
 const techStack = [
   {
     name: "React",
     tech: "frontend",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png",
+    image: `${react}`,
   },
   {
     name: "HTML",
@@ -75,20 +75,26 @@ const useStyles = makeStyles({
       boxShadow: "0 5px 15px rgba(242, 97, 103, .4)",
     },
   },
+  picIcons: {
+    display: "flex",
+    alignItems: "center",
+    // width: "maxwidth",
+    margin: "auto",
+  },
 });
 
 function TechIcon({ item }) {
   const classes = useStyles();
   const { name, image } = item;
   return (
-    <Grid item md={2.5}>
+    <Grid item md={2.5} textAlign="center" >
       <img
         src={`${image}`}
         alt={`${name} icon`}
         className={classes.picIcons}
         height="50px"
       />
-      <Typography align="center">{name}</Typography>
+      <Typography>{name}</Typography>
     </Grid>
   );
 }
@@ -125,14 +131,20 @@ export function Skills() {
           </Grid>
         </Paper>
       </Grid>
-      {/* <Typography>Language</Typography>
-      <Grid container spacing={6}>
-        {techStack
-          .filter((item) => item.tech === "language")
-          .map((item) => (
-            <TechIcon item={item} />
-          ))}
-      </Grid> */}
+      <Grid item xs={12} md={12}>
+        <Paper elevation={24} className={classes.paper}>
+          <Typography className={classes.name} variant="h5">
+            Languages
+          </Typography>
+          <Grid container spacing={6}>
+            {techStack
+              .filter((item) => item.tech === "language")
+              .map((item) => (
+                <TechIcon item={item} />
+              ))}
+          </Grid>
+        </Paper>
+      </Grid>
     </Grid>
   );
 }
