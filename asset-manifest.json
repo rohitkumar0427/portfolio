@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.ab39597f.chunk.css",
-    "main.js": "/portfolio/static/js/main.ad99c40a.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.ad99c40a.chunk.js.map",
+    "main.js": "/portfolio/static/js/main.e7731e16.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.e7731e16.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.69f7729f.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.69f7729f.js.map",
     "static/js/2.5639f4cc.chunk.js": "/portfolio/static/js/2.5639f4cc.chunk.js",
@@ -16,13 +16,13 @@
     "static/media/hotels.06486c9b.png": "/portfolio/static/media/hotels.06486c9b.png",
     "static/media/js.dfef8d73.png": "/portfolio/static/media/js.dfef8d73.png",
     "static/media/latest.2cffc6f9.png": "/portfolio/static/media/latest.2cffc6f9.png",
-    "static/media/mongoDB.55742478.png": "/portfolio/static/media/mongoDB.55742478.png",
+    "static/media/mongoDB.41ae1969.png": "/portfolio/static/media/mongoDB.41ae1969.png",
     "static/media/picnew.8f8b0f5d.png": "/portfolio/static/media/picnew.8f8b0f5d.png"
   },
   "entrypoints": [
     "static/js/runtime-main.69f7729f.js",
     "static/js/2.5639f4cc.chunk.js",
     "static/css/main.ab39597f.chunk.css",
-    "static/js/main.ad99c40a.chunk.js"
+    "static/js/main.e7731e16.chunk.js"
   ]
 }
