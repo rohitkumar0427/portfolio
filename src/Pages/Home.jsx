@@ -59,7 +59,7 @@ export default function Home({ isMobile }) {
               Full Stack Web Developer
             </Typography>
             <Typography variant="h2" className={classes.text}>
-              Hello, I`m{" "}
+              Hello, I'm{" "}
               <span className={`${classes.span} ${classes.text}`}>Rohit</span>
               <br />
               Welcome to my World!
