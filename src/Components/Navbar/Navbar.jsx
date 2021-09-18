@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     margin: "1rem",
+    cursor: "pointer",
   },
   title: {
     flexGrow: "1",
@@ -152,7 +153,7 @@ export default function Navbar() {
                         >
                           <ListItemText primary={title} />
                         </ListItem>
-                        <Divider className={classes.divider}/>
+                        <Divider className={classes.divider} />
                       </Link>
                     </>
                   ))}
