@@ -71,12 +71,12 @@ export default function Home({ isMobile }) {
               Full Stack Web Developer
             </Typography>
             <Typography variant="h2" className={classes.textSmall}>
-              Hello, I`m{" "}
+              Hello, I'm{" "}
               <span className={`${classes.span} ${classes.textSmall}`}>
                 Rohit
               </span>
               <br />
-              Welcome to my World.
+              Welcome to my World!
             </Typography>
           </>
         )}
