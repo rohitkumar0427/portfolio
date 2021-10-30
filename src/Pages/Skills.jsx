@@ -31,7 +31,7 @@ const techStack = [
   {
     name: "Material UI",
     tech: "frontend",
-    image: "https://material-ui.com/static/logo_raw.svg",
+    image: "https://mui.com/static/logo.png",
   },
   {
     name: "Node.js",
