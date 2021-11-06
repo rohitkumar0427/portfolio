@@ -24,18 +24,6 @@ export default function Projects({ isMobile }) {
 
   const projectDetails = [
     {
-      title: "Pluralsight Clone",
-      video: "https://youtu.be/RNF_sg1ktqg",
-      description1:
-        "Pluralsight, Inc. is an American privately held online education company that offers various video training courses for software developers. In this app, the user can search for videos to upgrade his skills, take notes and watch videos online.",
-      description3: "Done in collaboration with 2 members, In under 3 weeks.",
-      site: "https://rohitkumar0427.github.io/pluralWebsite/",
-      github: "https://github.com/rohitkumar0427/pluralWebsite",
-      tech: ["HTML", "CSS", "JavaScript"],
-      image:
-        "https://www.pngmagic.com/product_images/pluralsight-logo-png-vector-file-free-download.png",
-    },
-    {
       title: "MonsterIndia Clone",
       video: "https://www.youtube.com/embed/RNF_sg1ktqg",
       description1:
@@ -58,6 +46,18 @@ export default function Projects({ isMobile }) {
       github: "https://github.com/abhishekmah/Project-Hotels.com",
       image: `${hotels}`,
     },
+    {
+      title: "Pluralsight Clone",
+      video: "https://www.youtube.com/embed/wlly2_Qjz2Q",
+      description1:
+        "Pluralsight, Inc. is an American privately held online education company that offers various video training courses for software developers. In this app, the user can search for videos to upgrade his skills, take notes and watch videos online.",
+      description3: "Done in collaboration with 2 members, In under 3 weeks.",
+      site: "https://rohitkumar0427.github.io/pluralWebsite/",
+      github: "https://github.com/rohitkumar0427/pluralWebsite",
+      tech: ["HTML", "CSS", "JavaScript"],
+      image:
+        "https://www.pngmagic.com/product_images/pluralsight-logo-png-vector-file-free-download.png",
+    }
   ];
 
   return (
