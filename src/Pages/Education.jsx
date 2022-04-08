@@ -38,7 +38,7 @@ const educationDetails = [
   {
     title: "Full Stack Web Development",
     school: "Masai School",
-    duration: "Mar, 2021 - Present",
+    duration: "Mar, 2021 - Nov, 2021",
   },
   {
     title: "Bachelor`s - Electronics and Communication Engineering",

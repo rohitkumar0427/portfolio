@@ -36,6 +36,11 @@ const useStyles = makeStyles({
 
 const experiance = [
   {
+    title: "SDE 1 Frontend",
+    company: "Junglee Games",
+    duration: "Dec,2021 - Present",
+  },
+  {
     title: "Software Engineer",
     company: "KPIT Technologies",
     duration: "Aug,2018 - Oct,2020",
@@ -51,13 +56,13 @@ export default function Experiance() {
           <Grid item xs={12}>
             <Paper elevation={24} className={classes.paper}>
               <Typography className={classes.name} variant="h5">
-                Software Engineer
+                {item.title}
               </Typography>
               <Typography variant="h6" align="justify" className={classes.text}>
-                KPIT Technologies
+                {item.company}
               </Typography>
               <Typography variant="body2" align="justify" className={classes.duration}>
-                Aug, 2018 - Oct,2020
+                {item.duration}
               </Typography>
             </Paper>
           </Grid>
